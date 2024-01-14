@@ -1,1 +1,21 @@
-<p>login works!</p>
+<div class="full-height full-width display-flex align-items-center justify-content-center">
+  <mat-card class="display-flex align-items-center justify-content-center p-2">
+    <mat-card-title class="mb-2">Login</mat-card-title>
+
+    <mat-card-content>
+      <form (ngSubmit)="handleLogin()" class="display-flex align-items-center justify-content-center flex-direction-column">
+        <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput [(ngModel)]="username" name="username" placeholder="Enter your username">
+        </mat-form-field>
+  
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="password" name="password" type="password" placeholder="Enter your password">
+        </mat-form-field>
+  
+        <button mat-raised-button color="primary">Login</button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
