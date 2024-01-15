@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Router } from '@angular/router';
+
+import { updateUser } from '../../store/user/user.actions';
+import USER_MOCK from '../../constants/user-mock';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +15,7 @@ export class LoginComponent {
   password: string
 
   constructor(
+    private store: Store,
     private router: Router
   ) {
     this.username = ''
@@ -22,6 +27,7 @@ export class LoginComponent {
       username: this.username,
       password: this.password
     })
+    this.store.dispatch(updateUser({ userData: USER_MOCK }));
     this.router.navigate(['/dashboard'])
   }
 }
